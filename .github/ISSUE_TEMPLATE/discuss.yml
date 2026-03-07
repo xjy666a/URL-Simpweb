@@ -1,0 +1,121 @@
+name: 💭 讨论区
+description: 分享想法、提出问题、交流使用心得
+title: "[Discussion] "
+labels: ["discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎来到讨论区！这里是一个开放的空间，您可以：
+        - 💡 分享使用心得和技巧
+        - ❓ 提出疑问，寻求帮助
+        - 🗣️ 讨论功能改进方向
+        - 🤝 寻找志同道合的朋友
+
+  - type: dropdown
+    id: discussion-type
+    attributes:
+      label: 📂 讨论类型
+      description: 请选择您的讨论类型
+      options:
+        - 💡 使用心得分享
+        - ❓ 使用疑问
+        - 🗣️ 功能讨论
+        - 📚 资源推荐
+        - 🎯 使用场景分享
+        - 🤝 寻找合作
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: discussion-topic
+    attributes:
+      label: 📝 讨论主题
+      description: 请详细描述您想讨论的内容
+      placeholder: |
+        例如：
+        
+        【使用心得分享】
+        我发现了一个好用的技巧：在 example.com 上使用脚本时...
+        
+        【使用疑问】
+        请问大家，如何在 example.com 上实现 xxx 功能？
+        
+        【功能讨论】
+        关于新增 xxx 功能，大家觉得是否有必要？
+        
+        【使用场景分享】
+        我是一名教师，经常需要分享 example.com 上的教学资源...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 📋 背景信息
+      description: 提供一些背景信息，帮助大家更好地理解
+      placeholder: |
+        例如：
+        - 我使用这个脚本已经 3 个月了
+        - 我主要在 example.com 和 example.org 上使用
+        - 我的工作需要经常分享链接给客户
+        - 我尝试过 xxx 方法，但效果不理想
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: ❓ 具体问题
+      description: 如果有具体的问题，请在此列出
+      placeholder: |
+        例如：
+        1. 如何在 example.com 上实现 xxx？
+        2. 有没有更高效的方法？
+        3. 大家有没有类似的经历？
+
+  - type: textarea
+    id: ideas
+    attributes:
+      label: 💡 您的想法
+      description: 您对这个话题有什么想法或建议？
+      placeholder: |
+        例如：
+        - 我觉得可以这样做...
+        - 我尝试过的方法是...
+        - 我希望看到的功能是...
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 📚 参考资料
+      description: 如果有相关的参考资料或链接，请在此分享
+      placeholder: |
+        例如：
+        - 相关文档：https://example.com/docs
+        - 类似功能参考：https://example.com/similar
+        - 我之前发过的 Issue：#123
+
+  - type: checkboxes
+    id: discussion-check
+    attributes:
+      label: ✅ 确认事项
+      options:
+        - label: 我已搜索过是否有类似的讨论
+          required: false
+        - label: 我愿意参与后续的讨论
+          required: false
+        - label: 我理解这是一个开放讨论，不一定会有确定的答案
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        🎉 **讨论须知**：
+        
+        - 请保持友善和尊重，即使意见不同
+        - 欢迎分享您的经验和见解
+        - 如果您知道答案，欢迎回复帮助他人
+        - 有价值的讨论可能会被整理到文档中
+        
+        感谢您的参与！让我们一起打造更好的社区。🤝
