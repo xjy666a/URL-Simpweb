@@ -1,0 +1,128 @@
+name: 📤 提交自定义规则
+description: 我已经写好了清理规则，想要上传分享
+title: "[Rule] 提交规则："
+labels: ["rule-submission", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您分享自定义规则！请填写以下详细信息，帮助我们快速审核和合并您的规则。
+
+  - type: input
+    id: website-name
+    attributes:
+      label: 🌐 网站名称
+      description: 这个规则是针对哪个网站的？
+      placeholder: 例如：知乎、小红书、掘金
+    validations:
+      required: true
+
+  - type: input
+    id: website-domain
+    attributes:
+      label: 🔗 网站域名
+      description: 网站的主要域名（不需要 www）
+      placeholder: 例如：zhihu.com、xiaohongshu.com
+    validations:
+      required: true
+
+  - type: textarea
+    id: custom-rule
+    attributes:
+      label: 📝 您的自定义规则
+      description: 请粘贴您写好的完整规则配置
+      placeholder: |
+        name: 知乎
+        domain: zhihu.com
+        path: /question/
+        keep: id
+        remove: share,utm_source,utm_medium
+        action: redirect
+      render: yaml
+    validations:
+      required: true
+
+  - type: textarea
+    id: rule-example-before
+    attributes:
+      label: 🔴 清理前的链接示例
+      description: 提供一个应用规则前的原始链接
+      placeholder: |
+        https://www.zhihu.com/question/123456?share=1&utm_source=wechat&utm_medium=social
+    validations:
+      required: true
+
+  - type: textarea
+    id: rule-example-after
+    attributes:
+      label: 🟢 清理后的链接示例
+      description: 提供应用规则后的预期结果
+      placeholder: |
+        https://www.zhihu.com/question/123456
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rule-action
+    attributes:
+      label: ⚡ 规则动作类型
+      description: 您的规则使用哪种动作？
+      options:
+        - redirect（跳转到新链接）
+        - replace（替换当前URL，不刷新页面）
+        - 不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: rule-testing
+    attributes:
+      label: 🧪 测试情况
+      description: 您测试过这个规则吗？测试结果如何？
+      placeholder: |
+        例如：
+        - 已在 Chrome 浏览器测试通过
+        - 测试了 10 个不同的问题页面，都能正常清理
+        - 没有误删重要参数
+    validations:
+      required: false
+
+  - type: textarea
+    id: rule-notes
+    attributes:
+      label: 💬 补充说明
+      description: 关于这个规则的任何其他信息
+      placeholder: |
+        例如：
+        - 这个规则参考了其他类似网站的清理逻辑
+        - 某些特殊页面可能不适用
+        - 建议优先使用稳定版渠道发布
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: submission-check
+    attributes:
+      label: ✅ 提交前确认
+      options:
+        - label: 我已确认这个规则不会误删重要参数
+          required: true
+        - label: 我已测试过这个规则，可以正常工作
+          required: true
+        - label: 我理解规则审核需要一定时间
+          required: true
+        - label: 我愿意根据反馈修改规则
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        📌 **提交后会发生什么？**
+        
+        1. 维护者会审核您提交的规则
+        2. 如有问题会在此 Issue 中与您沟通
+        3. 审核通过后会合并到对应版本渠道
+        4. 您的贡献将被记录在贡献者列表中
+        
+        感谢您的贡献！🎉
