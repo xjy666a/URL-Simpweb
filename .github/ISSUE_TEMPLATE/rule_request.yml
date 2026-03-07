@@ -1,138 +1,128 @@
-name: 📝 规则请求
-description: 请求支持新的网站链接清理或上传自定义规则
-title: "[Rule] "
-labels: ["new-rule"]
+name: � 请求支持新网站
+description: 我发现某个网站可以优化，但不太清楚具体参数
+title: "[Rule] 请求支持："
+labels: ["rule-request", "help-wanted"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢您贡献新规则！请选择适合您的选项：
-
-  - type: dropdown
-    id: request-type
-    attributes:
-      label: 您想做什么？
-      options:
-        - 我有写好的规则，想要上传分享
-        - 我发现某个网站可以优化，但不太清楚具体参数
-    validations:
-      required: true
-
-  # 选项一：已有规则想要上传
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## 📤 上传自定义规则
-        
-        请填写以下信息：
+        没关系！告诉我们您发现的网站，我们会帮您分析哪些参数可以清理。
 
   - type: input
     id: website-name
     attributes:
-      label: 网站名称
-      description: 这个规则是针对哪个网站的？
-      placeholder: 例如：知乎
+      label: 🌐 网站名称
+      description: 您发现可以优化的网站叫什么？
+      placeholder: 例如：小红书、掘金、SegmentFault
+    validations:
+      required: true
 
   - type: input
     id: website-domain
     attributes:
-      label: 网站域名
-      description: 网站的主要域名
-      placeholder: 例如：zhihu.com
-
-  - type: textarea
-    id: custom-rule
-    attributes:
-      label: 您的自定义规则
-      description: 请粘贴您写好的规则配置
-      placeholder: |
-        name: 知乎
-        domain: zhihu.com
-        path: /question/
-        keep: id
-        remove: share,utm_source
-        action: redirect
-      render: yaml
-
-  - type: textarea
-    id: rule-example-urls
-    attributes:
-      label: 规则效果示例
-      description: 展示规则应用前后的效果
-      placeholder: |
-        清理前：https://www.zhihu.com/question/123456?share=1&utm_source=wechat
-        清理后：https://www.zhihu.com/question/123456
-
-  - type: textarea
-    id: rule-notes
-    attributes:
-      label: 补充说明
-      description: 关于这个规则的任何补充信息
-      placeholder: 例如：这个规则已经测试过，可以正常使用...
-
-  # 选项二：发现网站但不太清楚
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## 🔍 请求支持新网站
-        
-        没关系，告诉我们您发现的网站，我们会帮您分析！请填写以下信息：
-
-  - type: input
-    id: new-website-name
-    attributes:
-      label: 网站名称
-      description: 您发现可以优化的网站叫什么？
-      placeholder: 例如：小红书
-    validations:
-      required: false
-
-  - type: input
-    id: new-website-domain
-    attributes:
-      label: 网站域名
+      label: 🔗 网站域名
       description: 网站的网址是什么？
-      placeholder: 例如：xiaohongshu.com
+      placeholder: 例如：xiaohongshu.com、juejin.cn
     validations:
-      required: false
+      required: true
 
   - type: textarea
-    id: new-website-example
+    id: website-description
     attributes:
-      label: 示例链接
-      description: 提供一个您觉得很长的链接示例
+      label: 📝 网站简介
+      description: 这个网站主要是做什么的？
       placeholder: |
-        https://www.xiaohongshu.com/explore/123456?share_source=copy_link
+        例如：
+        - 小红书是一个生活方式分享社区
+        - 经常在上面看到购物分享、旅行攻略等内容
     validations:
       required: false
 
   - type: textarea
-    id: new-website-usage
+    id: example-url-long
     attributes:
-      label: 使用场景
+      label: 🔴 长链接示例
+      description: 提供一个您觉得很长的链接（复制粘贴完整链接）
+      placeholder: |
+        https://www.xiaohongshu.com/explore/123456789?share_source=copy_link&share_medium=iphone&share_session_id=ABC123
+    validations:
+      required: true
+
+  - type: textarea
+    id: example-url-short
+    attributes:
+      label: 🟡 您希望的简化效果
+      description: 您觉得链接应该简化成什么样？（不确定可以留空）
+      placeholder: |
+        https://www.xiaohongshu.com/explore/123456789
+        
+        （如果不确定，可以描述：希望保留文章ID，去掉分享相关的参数）
+    validations:
+      required: false
+
+  - type: textarea
+    id: usage-scenario
+    attributes:
+      label: 💡 使用场景
       description: 您通常在什么情况下需要分享这个网站的链接？
       placeholder: |
         例如：
-        - 经常在小红书看到好的笔记想分享给朋友
-        - 复制出来的链接很长，带着很多参数
-        - 希望链接能简洁一些
+        - 经常在小红书看到好的购物分享想发给朋友
+        - 复制出来的链接很长，带着 share_source、share_medium 等参数
+        - 朋友打开链接时会有"来自分享"的提示，希望去掉
+        - 想要保存一些有用的帖子链接，但太长了不好管理
+    validations:
+      required: true
+
+  - type: dropdown
+    id: usage-frequency
+    attributes:
+      label: 📊 使用频率
+      description: 您大概多久会分享一次这个网站的链接？
+      options:
+        - 每天多次
+        - 每天一次
+        - 每周几次
+        - 偶尔
+        - 很少
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-examples
+    attributes:
+      label: 🔗 更多链接示例（可选）
+      description: 如果有不同类型的页面链接，可以多提供几个
+      placeholder: |
+        例如：
+        - 用户主页链接：https://...
+        - 搜索结果链接：https://...
+        - 商品详情链接：https://...
     validations:
       required: false
 
   - type: checkboxes
-    id: new-website-check
+    id: request-check
     attributes:
-      label: 确认事项
+      label: ✅ 确认事项
       options:
         - label: 这个网站的链接确实比较长，有优化的空间
+          required: true
+        - label: 我愿意在需要时提供更多链接示例
           required: false
-        - label: 我愿意提供更多信息帮助完善规则
+        - label: 我愿意测试初步的规则并提供反馈
           required: false
 
   - type: markdown
     attributes:
       value: |
         ---
-        提交后我们会尽快评估，如果需要更多信息会在此 Issue 中与您沟通。感谢您的贡献！
+        📌 **接下来会发生什么？**
+        
+        1. 我们会分析您提供的链接，找出可以清理的参数
+        2. 在此 Issue 中与您确认清理方案
+        3. 创建初步规则并请您测试
+        4. 根据测试结果完善规则
+        5. 最终合并到云端规则库
+        
+        感谢您的建议！我们会尽快处理。🙏
