@@ -1,0 +1,55 @@
+name: 📝 规则请求
+description: 请求支持新的网站链接清理
+title: "[Rule] "
+labels: ["new-rule"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您贡献新规则！请提供以下信息，我们会尽快评估和添加支持。
+
+  - type: input
+    id: website
+    attributes:
+      label: 网站名称
+      description: 需要支持清理的网站名称
+      placeholder: 例如：知乎
+    validations:
+      required: true
+
+  - type: input
+    id: domain
+    attributes:
+      label: 网站域名
+      description: 网站的主要域名
+      placeholder: 例如：zhihu.com
+    validations:
+      required: true
+
+  - type: textarea
+    id: example-urls
+    attributes:
+      label: 示例链接
+      description: 提供需要清理的链接示例（清理前和清理后）
+      placeholder: |
+        清理前：https://www.zhihu.com/question/123456?share=1
+        清理后：https://www.zhihu.com/question/123456
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 说明
+      description: 补充说明这个网站的使用场景
+      placeholder: 例如：经常需要在知乎分享答案链接...
+
+  - type: checkboxes
+    id: check
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我已确认该网站链接可以简化
+          required: true
+        - label: 我已提供清晰的示例链接
+          required: true
