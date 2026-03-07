@@ -13,7 +13,7 @@ body:
     attributes:
       label: 🌐 网站名称
       description: 这个规则是针对哪个网站的？
-      placeholder: 例如：知乎、小红书、掘金
+      placeholder: 例如：Example、Example Blog、Example Shop
     validations:
       required: true
 
@@ -22,21 +22,34 @@ body:
     attributes:
       label: 🔗 网站域名
       description: 网站的主要域名（不需要 www）
-      placeholder: 例如：zhihu.com、xiaohongshu.com
+      placeholder: 例如：example.com、blog.example.com
     validations:
       required: true
 
   - type: textarea
+    id: website-description
+    attributes:
+      label: 📝 网站简介
+      description: 简单介绍一下这个网站是做什么的
+      placeholder: |
+        例如：
+        - Example 是一个技术博客平台
+        - 用户可以在上面发布和阅读技术文章
+        - 分享链接时带有 utm 追踪参数
+    validations:
+      required: false
+
+  - type: textarea
     id: custom-rule
     attributes:
-      label: 📝 您的自定义规则
+      label: 📋 您的自定义规则
       description: 请粘贴您写好的完整规则配置
       placeholder: |
-        name: 知乎
-        domain: zhihu.com
-        path: /question/
-        keep: id
-        remove: share,utm_source,utm_medium
+        name: Example 博客
+        domain: example.com
+        path: /article/
+        keep: id, slug
+        remove: utm_source, utm_medium, utm_campaign, ref
         action: redirect
       render: yaml
     validations:
@@ -48,7 +61,7 @@ body:
       label: 🔴 清理前的链接示例
       description: 提供一个应用规则前的原始链接
       placeholder: |
-        https://www.zhihu.com/question/123456?share=1&utm_source=wechat&utm_medium=social
+        https://www.example.com/article/how-to-use-url-cleaner?id=12345&utm_source=wechat&utm_medium=social&ref=homepage
     validations:
       required: true
 
@@ -58,7 +71,7 @@ body:
       label: 🟢 清理后的链接示例
       description: 提供应用规则后的预期结果
       placeholder: |
-        https://www.zhihu.com/question/123456
+        https://www.example.com/article/how-to-use-url-cleaner?id=12345
     validations:
       required: true
 
@@ -75,6 +88,22 @@ body:
       required: true
 
   - type: textarea
+    id: rule-params-explanation
+    attributes:
+      label: 🔍 参数说明
+      description: 解释一下您保留和移除的参数分别是什么作用
+      placeholder: |
+        保留的参数：
+        - id：文章的唯一标识，必须保留才能访问文章
+        - slug：文章的URL别名，用于SEO
+        
+        移除的参数：
+        - utm_source, utm_medium, utm_campaign：营销推广追踪参数
+        - ref：来源页面标记
+    validations:
+      required: false
+
+  - type: textarea
     id: rule-testing
     attributes:
       label: 🧪 测试情况
@@ -82,8 +111,22 @@ body:
       placeholder: |
         例如：
         - 已在 Chrome 浏览器测试通过
-        - 测试了 10 个不同的问题页面，都能正常清理
-        - 没有误删重要参数
+        - 测试了 10 篇不同的文章页面，都能正常清理
+        - 测试了文章列表页、搜索页，不会误触发
+        - 没有误删重要参数，清理后的链接可以正常访问
+    validations:
+      required: false
+
+  - type: textarea
+    id: rule-edge-cases
+    attributes:
+      label: ⚠️ 特殊情况
+      description: 有没有哪些页面或链接不适用这个规则？
+      placeholder: |
+        例如：
+        - 用户个人主页链接不需要清理（没有多余参数）
+        - 某些旧版文章链接格式不同，可能不适用
+        - 付费文章链接有特殊参数，不建议清理
     validations:
       required: false
 
@@ -95,8 +138,8 @@ body:
       placeholder: |
         例如：
         - 这个规则参考了其他类似网站的清理逻辑
-        - 某些特殊页面可能不适用
-        - 建议优先使用稳定版渠道发布
+        - 建议优先发布到测试版渠道，观察一段时间
+        - 该网站在国内访问速度较快，用户群体较大
     validations:
       required: false
 
