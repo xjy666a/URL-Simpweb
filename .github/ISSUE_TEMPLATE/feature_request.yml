@@ -11,34 +11,77 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: 功能描述
+      label: 💡 功能描述
       description: 请详细描述您希望添加的功能
-      placeholder: 例如：希望支持清理某网站的链接
+      placeholder: |
+        例如：
+        - 希望支持清理 example.com 的搜索链接
+        - 建议在清理后显示通知提示
+        - 希望添加白名单功能，某些网站不清理
     validations:
       required: true
 
   - type: textarea
     id: motivation
     attributes:
-      label: 使用场景
+      label: 🎯 使用场景
       description: 这个功能在什么情况下会用到？解决了什么问题？
-      placeholder: 例如：经常需要分享某网站的链接，但链接很长...
+      placeholder: |
+        例如：
+        - 我经常需要在 example.com 搜索资料，但分享链接时很长
+        - 有时候不确定链接是否被清理了，希望有个提示
+        - 某些工作网站不需要清理，希望有白名单功能
     validations:
       required: true
 
   - type: textarea
     id: example
     attributes:
-      label: 示例
-      description: 提供具体的链接示例
+      label: 📝 示例
+      description: 提供具体的示例说明
       placeholder: |
-        清理前：https://example.com/page?id=123&ref=abc
-        清理后：https://example.com/page?id=123
+        如果是规则请求：
+        - 清理前：https://www.example.com/search?q=test&utm_source=wechat
+        - 清理后：https://www.example.com/search?q=test
+        
+        如果是功能请求：
+        - 当前行为：清理后没有任何提示
+        - 期望行为：清理后在右下角显示 "链接已简化" 提示
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: ⭐ 优先级
+      description: 您认为这个功能的重要程度？
+      options:
+        - 🔴 高 - 非常需要，影响日常使用
+        - 🟡 中 - 有会更好，目前也能用
+        - 🟢 低 - 锦上添花，不急
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔧 替代方案
+      description: 您目前是如何解决这个问题的？
+      placeholder: |
+        例如：
+        - 目前手动删除链接中的参数
+        - 使用其他脚本辅助
+        - 不处理，直接分享长链接
     validations:
       required: false
 
   - type: textarea
     id: additional
     attributes:
-      label: 其他信息
+      label: 💬 其他信息
       description: 任何其他相关信息
+      placeholder: |
+        例如：
+        - 参考了其他类似工具的实现
+        - 有相关的技术资料或文档
+        - 愿意协助测试新功能
