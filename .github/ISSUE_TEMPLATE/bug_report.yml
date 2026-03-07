@@ -1,0 +1,86 @@
+name: 🐛 Bug 报告
+description: 报告脚本或规则中的问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您提交反馈！请填写以下信息，帮助我们更快地定位和解决问题。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请详细描述您遇到的问题
+      placeholder: 例如：访问某个网站时脚本没有生效
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      description: 请详细描述如何复现这个问题
+      placeholder: |
+        1. 访问 https://example.com/xxx
+        2. 点击某个按钮
+        3. 观察到什么问题
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+      description: 描述您期望看到的正确行为
+      placeholder: 例如：链接应该被清理为 xxx
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 相关链接
+      description: 提供出现问题的网页链接
+      placeholder: https://example.com/xxx
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 浏览器
+      options:
+        - Chrome
+        - Firefox
+        - Edge
+        - Safari
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: channel
+    attributes:
+      label: 使用的版本渠道
+      options:
+        - 稳定版
+        - 测试版
+        - 开发版
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图
+      description: 如果有相关截图，请在此上传
+      placeholder: 拖拽图片到此处或点击上传
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 其他信息
+      description: 任何其他可能相关的信息
+      placeholder: 例如：网络环境、特殊设置等
