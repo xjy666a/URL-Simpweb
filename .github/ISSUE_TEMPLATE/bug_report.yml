@@ -11,46 +11,55 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: 问题描述
+      label: 📋 问题描述
       description: 请详细描述您遇到的问题
-      placeholder: 例如：访问某个网站时脚本没有生效
+      placeholder: |
+        例如：
+        - 访问 example.com 时脚本没有生效
+        - 链接清理后无法正常打开
+        - 某些参数被误删导致页面显示异常
     validations:
       required: true
 
   - type: textarea
     id: reproduction
     attributes:
-      label: 复现步骤
+      label: 🔁 复现步骤
       description: 请详细描述如何复现这个问题
       placeholder: |
-        1. 访问 https://example.com/xxx
-        2. 点击某个按钮
-        3. 观察到什么问题
+        1. 打开浏览器，访问 https://www.example.com/search?q=test&utm_source=ads
+        2. 等待页面加载完成
+        3. 观察地址栏链接是否被清理
+        4. 看到什么问题（链接没有变化 / 页面报错 / 其他异常）
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: 预期行为
+      label: ✅ 预期行为
       description: 描述您期望看到的正确行为
-      placeholder: 例如：链接应该被清理为 xxx
+      placeholder: |
+        例如：
+        - 链接应该被清理为 https://www.example.com/search?q=test
+        - 页面正常显示，没有追踪参数
     validations:
       required: true
 
   - type: input
     id: url
     attributes:
-      label: 相关链接
+      label: 🔗 相关链接
       description: 提供出现问题的网页链接
-      placeholder: https://example.com/xxx
+      placeholder: https://www.example.com/page?id=123&ref=abc
     validations:
       required: false
 
   - type: dropdown
     id: browser
     attributes:
-      label: 浏览器
+      label: 🌐 浏览器
+      description: 您使用的是什么浏览器？
       options:
         - Chrome
         - Firefox
@@ -63,7 +72,8 @@ body:
   - type: dropdown
     id: channel
     attributes:
-      label: 使用的版本渠道
+      label: 📦 使用的版本渠道
+      description: 您当前使用的是哪个更新渠道？
       options:
         - 稳定版
         - 测试版
@@ -74,13 +84,27 @@ body:
   - type: textarea
     id: screenshots
     attributes:
-      label: 截图
-      description: 如果有相关截图，请在此上传
-      placeholder: 拖拽图片到此处或点击上传
+      label: 📸 截图
+      description: 如果有相关截图，请在此上传（可以拖拽图片或点击上传）
+      placeholder: |
+        建议提供：
+        - 清理前的链接截图
+        - 清理后的链接截图
+        - 如果有报错信息，请截图控制台（按 F12 打开开发者工具）
 
   - type: textarea
     id: additional
     attributes:
-      label: 其他信息
+      label: 💬 其他信息
       description: 任何其他可能相关的信息
-      placeholder: 例如：网络环境、特殊设置等
+      placeholder: |
+        例如：
+        - 网络环境（公司网络 / 家庭网络 / VPN）
+        - 是否安装了其他可能影响链接的扩展
+        - 问题出现的频率（每次 / 偶尔 / 特定条件下）
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 **提示**：您可以通过脚本菜单中的 "📋 复制记录用于反馈" 功能，自动收集调试信息并粘贴到这里。
