@@ -1,0 +1,86 @@
+name: 💬 通用反馈
+description: 其他类型的反馈或问题
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您的反馈！请填写以下信息，帮助我们更好地了解您的想法。
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: 📂 反馈类型
+      description: 请选择您的反馈类型
+      options:
+        - 使用体验反馈
+        - 文档/说明建议
+        - 感谢/鼓励
+        - 合作/推广意向
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback-content
+    attributes:
+      label: 📝 反馈内容
+      description: 请详细描述您的反馈
+      placeholder: |
+        例如：
+        - 使用脚本一段时间了，感觉很好用，特别感谢开发者
+        - README 文档可以更详细一些，比如添加常见问题解答
+        - 希望能和贵项目进行合作推广
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: 💡 您的建议
+      description: 如果有具体的改进建议，请在此描述
+      placeholder: |
+        例如：
+        - 建议在脚本菜单中添加快捷操作
+        - 建议增加多语言支持
+        - 建议在 GitHub Wiki 中添加更详细的使用教程
+
+  - type: input
+    id: contact
+    attributes:
+      label: 📧 联系方式（可选）
+      description: 如果需要我们回复，请留下您的联系方式
+      placeholder: 例如：your-email@example.com 或 GitHub 用户名
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📎 附加信息
+      description: 任何其他相关信息
+      placeholder: |
+        例如：
+        - 我是在哪里了解到这个脚本的
+        - 我的使用环境和场景
+        - 其他参考链接或资料
+
+  - type: checkboxes
+    id: feedback-check
+    attributes:
+      label: ✅ 确认事项
+      options:
+        - label: 我已阅读了 README 文档
+          required: false
+        - label: 我确认这不是 Bug 报告或功能请求（如果是请使用对应模板）
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 **提示**：
+        - 如果是 Bug 报告，请使用 🐛 Bug 报告 模板
+        - 如果是功能请求，请使用 ✨ 功能请求 模板
+        - 如果是规则相关，请使用对应的规则模板
+        
+        感谢您的反馈！我们会认真阅读并回复。🙏
