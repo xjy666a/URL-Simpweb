@@ -1,0 +1,44 @@
+name: ✨ 功能请求
+description: 建议新功能或改进
+title: "[Feature] "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您提出建议！请填写以下信息，帮助我们理解您的需求。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 功能描述
+      description: 请详细描述您希望添加的功能
+      placeholder: 例如：希望支持清理某网站的链接
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 使用场景
+      description: 这个功能在什么情况下会用到？解决了什么问题？
+      placeholder: 例如：经常需要分享某网站的链接，但链接很长...
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: 示例
+      description: 提供具体的链接示例
+      placeholder: |
+        清理前：https://example.com/page?id=123&ref=abc
+        清理后：https://example.com/page?id=123
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 其他信息
+      description: 任何其他相关信息
