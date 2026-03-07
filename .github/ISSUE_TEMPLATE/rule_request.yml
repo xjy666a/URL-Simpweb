@@ -1,4 +1,4 @@
-name: � 请求支持新网站
+name: 🔍 请求支持新网站
 description: 我发现某个网站可以优化，但不太清楚具体参数
 title: "[Rule] 请求支持："
 labels: ["rule-request", "help-wanted"]
@@ -13,7 +13,7 @@ body:
     attributes:
       label: 🌐 网站名称
       description: 您发现可以优化的网站叫什么？
-      placeholder: 例如：小红书、掘金、SegmentFault
+      placeholder: 例如：Example、Example Shop、Example Video
     validations:
       required: true
 
@@ -22,7 +22,7 @@ body:
     attributes:
       label: 🔗 网站域名
       description: 网站的网址是什么？
-      placeholder: 例如：xiaohongshu.com、juejin.cn
+      placeholder: 例如：example.com、shop.example.com
     validations:
       required: true
 
@@ -33,8 +33,9 @@ body:
       description: 这个网站主要是做什么的？
       placeholder: |
         例如：
-        - 小红书是一个生活方式分享社区
-        - 经常在上面看到购物分享、旅行攻略等内容
+        - Example 是一个综合性的内容分享平台
+        - 用户可以在上面浏览文章、观看视频、购买商品
+        - 我经常在上面查找资料和分享内容给朋友
     validations:
       required: false
 
@@ -44,7 +45,7 @@ body:
       label: 🔴 长链接示例
       description: 提供一个您觉得很长的链接（复制粘贴完整链接）
       placeholder: |
-        https://www.xiaohongshu.com/explore/123456789?share_source=copy_link&share_medium=iphone&share_session_id=ABC123
+        https://www.example.com/item/123456?utm_source=copy_link&utm_medium=mobile&share_session_id=ABC123XYZ&timestamp=1234567890
     validations:
       required: true
 
@@ -54,9 +55,22 @@ body:
       label: 🟡 您希望的简化效果
       description: 您觉得链接应该简化成什么样？（不确定可以留空）
       placeholder: |
-        https://www.xiaohongshu.com/explore/123456789
+        https://www.example.com/item/123456
         
-        （如果不确定，可以描述：希望保留文章ID，去掉分享相关的参数）
+        （如果不确定，可以描述：希望保留商品ID，去掉分享相关的参数）
+    validations:
+      required: false
+
+  - type: textarea
+    id: example-urls-additional
+    attributes:
+      label: 🔗 更多链接示例（可选）
+      description: 如果有不同类型的页面链接，可以多提供几个
+      placeholder: |
+        例如：
+        - 文章页面：https://www.example.com/article/abc123?utm_source=wechat
+        - 视频页面：https://www.example.com/video/def456?share=1&ref=home
+        - 用户主页：https://www.example.com/user/username?tab=posts
     validations:
       required: false
 
@@ -67,10 +81,11 @@ body:
       description: 您通常在什么情况下需要分享这个网站的链接？
       placeholder: |
         例如：
-        - 经常在小红书看到好的购物分享想发给朋友
-        - 复制出来的链接很长，带着 share_source、share_medium 等参数
+        - 经常在 Example 上看到好的商品想发给朋友
+        - 复制出来的链接很长，带着 utm_source、share_session_id 等参数
         - 朋友打开链接时会有"来自分享"的提示，希望去掉
-        - 想要保存一些有用的帖子链接，但太长了不好管理
+        - 想要保存一些有用的内容链接，但太长了不好管理
+        - 在工作文档中引用链接时，长链接影响排版
     validations:
       required: true
 
@@ -89,15 +104,29 @@ body:
       required: false
 
   - type: textarea
-    id: additional-examples
+    id: params-observation
     attributes:
-      label: 🔗 更多链接示例（可选）
-      description: 如果有不同类型的页面链接，可以多提供几个
+      label: 👀 参数观察
+      description: 您注意到链接中有哪些看起来可以去掉的参数？
       placeholder: |
         例如：
-        - 用户主页链接：https://...
-        - 搜索结果链接：https://...
-        - 商品详情链接：https://...
+        - 链接中有 utm_source、utm_medium 这些看起来是广告追踪的
+        - 有 share_session_id 这种分享相关的参数
+        - 有 timestamp 时间戳参数
+        - 不太确定哪些可以去掉，需要帮忙分析
+    validations:
+      required: false
+
+  - type: textarea
+    id: special-requirements
+    attributes:
+      label: ⚠️ 特殊要求
+      description: 有没有哪些参数您觉得必须保留？
+      placeholder: |
+        例如：
+        - 商品ID必须保留，否则打不开页面
+        - 文章slug可以保留，对SEO友好
+        - 不太确定，需要帮忙判断
     validations:
       required: false
 
@@ -111,6 +140,8 @@ body:
         - label: 我愿意在需要时提供更多链接示例
           required: false
         - label: 我愿意测试初步的规则并提供反馈
+          required: false
+        - label: 我理解规则开发需要一定时间
           required: false
 
   - type: markdown
