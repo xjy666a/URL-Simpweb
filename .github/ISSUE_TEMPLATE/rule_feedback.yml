@@ -1,0 +1,123 @@
+name: 📋 规则问题反馈
+description: 报告某个网站链接清理规则的问题
+labels: ["rule-bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您提交规则反馈！请填写以下信息，帮助我们改进规则。
+        
+        💡 **提示**：如果是**脚本功能问题**（如设置面板打不开、云端同步失败等），请使用"🐛 功能问题反馈"模板。
+
+  - type: input
+    id: rule_name
+    attributes:
+      label: 📝 规则名称
+      description: 请填写规则名称
+      placeholder: 例如：百度搜索清理、必应搜索清理
+    validations:
+      required: true
+
+  - type: input
+    id: rule_version
+    attributes:
+      label: 📌 规则版本
+      description: 请填写规则版本号
+      placeholder: 例如：1.0.0、1.2.3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rule_type
+    attributes:
+      label: 🏷️ 规则类型
+      description: 请选择规则类型
+      options:
+        - 云端规则
+        - 本地默认规则
+        - 自定义规则
+    validations:
+      required: true
+
+  - type: input
+    id: website_url
+    attributes:
+      label: 🔗 问题网页链接
+      description: 提供出现问题的完整网页链接
+      placeholder: https://www.example.com/search?q=test&utm_source=ads
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_description
+    attributes:
+      label: 📋 问题描述
+      description: 请详细描述规则存在的问题
+      placeholder: |
+        例如：
+        - 某些参数被误删，导致页面无法正常显示
+        - 某些追踪参数应该被移除但没有移除
+        - 规则没有生效，链接没有被清理
+        - 清理后的链接无法正常打开
+        - 某些必要参数被错误地移除了
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: 🔍 当前行为
+      description: 请描述当前链接被清理后的结果
+      placeholder: |
+        清理后的链接：
+        https://www.example.com/search?q=test
+        
+        问题说明：
+        - 参数 xxx 被错误地移除了
+        - 或者：参数 yyy 应该被移除但没有移除
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: ✅ 预期行为
+      description: 请描述您期望的正确清理结果
+      placeholder: |
+        期望的清理结果：
+        https://www.example.com/search?q=test&ref=keep
+        
+        说明：
+        - 应该保留的参数：q, ref
+        - 应该移除的参数：utm_source, utm_medium
+    validations:
+      required: true
+
+  - type: textarea
+    id: rule_details
+    attributes:
+      label: 📄 规则详情（可选）
+      description: 如果您知道规则的具体配置，请填写
+      placeholder: |
+        域名：example.com
+        路径：/search
+        保留参数：q, ref
+        移除参数：utm_*
+        动作：replace
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 截图
+      description: 如果有相关截图，请在此上传
+      placeholder: |
+        建议提供：
+        - 清理前的链接截图
+        - 清理后的链接截图
+        - 浏览器地址栏的完整URL
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 **提示**：您可以通过脚本菜单中的 "📋 复制记录用于反馈" 功能，自动收集调试信息并粘贴到这里。
