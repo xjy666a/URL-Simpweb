@@ -1,0 +1,20 @@
+{
+  "id": "google-com-v1.0.0",
+  "name": "Google搜索",
+  "domain": "google.com",
+  "version": "v1.0.0",
+  "publishedAt": "2024-01-01T00:00:00Z",
+  "author": "xjy666a",
+  "rules": [
+    {
+      "id": "default-google",
+      "name": "Google搜索",
+      "domain": "google.com",
+      "path": "/search",
+      "keepParams": ["q", "start"],
+      "removeParams": ["*"],
+      "action": "redirect",
+      "enabled": true
+    }
+  ]
+}
