@@ -1,8 +1,17 @@
 {
   "version": "1.0.0",
   "updatedAt": "2024-01-01T00:00:00Z",
-  "totalWebsites": 7,
+  "totalWebsites": 8,
   "websites": [
+    {
+      "id": "google-com",
+      "name": "Google搜索",
+      "domain": "google.com",
+      "folder": "google.com",
+      "description": "Google搜索的清理规则，保留搜索关键词和分页参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
     {
       "id": "bing-com",
       "name": "必应搜索",
