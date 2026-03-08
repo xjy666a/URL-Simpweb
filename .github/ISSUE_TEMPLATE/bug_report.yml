@@ -1,5 +1,5 @@
-name: 🐛 Bug 报告
-description: 报告脚本或规则中的问题
+name: 🐛 功能问题反馈
+description: 报告脚本功能、界面、兼容性等问题（非规则问题）
 title: "[Bug] "
 labels: ["bug"]
 body:
@@ -7,6 +7,8 @@ body:
     attributes:
       value: |
         感谢您提交反馈！请填写以下信息，帮助我们更快地定位和解决问题。
+        
+        💡 **提示**：如果是**规则问题**（如某个网站链接清理不正确），请使用"📋 规则问题反馈"模板。
 
   - type: textarea
     id: description
@@ -15,9 +17,11 @@ body:
       description: 请详细描述您遇到的问题
       placeholder: |
         例如：
-        - 访问 example.com 时脚本没有生效
-        - 链接清理后无法正常打开
-        - 某些参数被误删导致页面显示异常
+        - 脚本设置面板无法打开
+        - 云端同步功能报错
+        - 界面显示异常
+        - 与其他扩展冲突
+        - 脚本菜单无法显示
     validations:
       required: true
 
@@ -27,10 +31,10 @@ body:
       label: 🔁 复现步骤
       description: 请详细描述如何复现这个问题
       placeholder: |
-        1. 打开浏览器，访问 https://www.example.com/search?q=test&utm_source=ads
-        2. 等待页面加载完成
-        3. 观察地址栏链接是否被清理
-        4. 看到什么问题（链接没有变化 / 页面报错 / 其他异常）
+        1. 打开浏览器，访问任意网页
+        2. 点击 Tampermonkey 图标
+        3. 选择"打开设置面板"
+        4. 看到什么问题（面板无法打开 / 报错 / 显示空白）
     validations:
       required: true
 
@@ -41,19 +45,11 @@ body:
       description: 描述您期望看到的正确行为
       placeholder: |
         例如：
-        - 链接应该被清理为 https://www.example.com/search?q=test
-        - 页面正常显示，没有追踪参数
+        - 设置面板正常打开并显示所有选项
+        - 云端同步成功完成
+        - 界面正常显示无错位
     validations:
       required: true
-
-  - type: input
-    id: url
-    attributes:
-      label: 🔗 相关链接
-      description: 提供出现问题的网页链接
-      placeholder: https://www.example.com/page?id=123&ref=abc
-    validations:
-      required: false
 
   - type: dropdown
     id: browser
@@ -88,9 +84,9 @@ body:
       description: 如果有相关截图，请在此上传（可以拖拽图片或点击上传）
       placeholder: |
         建议提供：
-        - 清理前的链接截图
-        - 清理后的链接截图
-        - 如果有报错信息，请截图控制台（按 F12 打开开发者工具）
+        - 问题发生时的界面截图
+        - 浏览器控制台报错信息（按 F12 打开开发者工具，切换到 Console 标签）
+        - 网络请求信息（如有）
 
   - type: textarea
     id: additional
@@ -99,8 +95,10 @@ body:
       description: 任何其他可能相关的信息
       placeholder: |
         例如：
+        - 操作系统版本（Windows 10 / macOS / Linux）
+        - 脚本管理器版本（Tampermonkey v5.x / Violentmonkey v2.x）
         - 网络环境（公司网络 / 家庭网络 / VPN）
-        - 是否安装了其他可能影响链接的扩展
+        - 是否安装了其他可能影响脚本的扩展
         - 问题出现的频率（每次 / 偶尔 / 特定条件下）
 
   - type: markdown
