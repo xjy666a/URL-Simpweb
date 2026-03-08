@@ -1,25 +1,16 @@
 {
-  "version": "1.0.4",
-  "updatedAt": "2024-01-01T00:00:00Z",
-  "totalWebsites": 8,
+  "version": "2.0.0",
+  "updatedAt": "2026-03-08T00:00:00Z",
+  "totalWebsites": 7,
   "websites": [
-    {
-      "id": "google-com",
-      "name": "Google搜索",
-      "domain": "google.com",
-      "folder": "google.com",
-      "description": "Google搜索的清理规则，保留搜索关键词和分页参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
-    },
     {
       "id": "bing-com",
       "name": "必应搜索",
       "domain": "bing.com",
       "folder": "bing.com",
       "description": "必应搜索的清理规则，保留搜索关键词和分页参数",
-      "updatedAt": "2026-04-01T00:00:00Z",
-      "latestVersion": "v1.4.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     },
     {
       "id": "baidu-com",
@@ -27,8 +18,8 @@
       "domain": "baidu.com",
       "folder": "baidu.com",
       "description": "百度搜索的清理规则，保留搜索关键词和分页参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     },
     {
       "id": "bilibili-com",
@@ -36,8 +27,8 @@
       "domain": "bilibili.com",
       "folder": "bilibili.com",
       "description": "B站视频的清理规则，移除所有URL参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     },
     {
       "id": "kimi-moonshot-cn",
@@ -45,8 +36,8 @@
       "domain": "kimi.moonshot.cn",
       "folder": "kimi.moonshot.cn",
       "description": "KIMI AI的清理规则，移除所有URL参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     },
     {
       "id": "so-com",
@@ -54,8 +45,8 @@
       "domain": "so.com",
       "folder": "so.com",
       "description": "360搜索的清理规则，保留搜索关键词和分页参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     },
     {
       "id": "blog-csdn-net",
@@ -63,8 +54,8 @@
       "domain": "blog.csdn.net",
       "folder": "blog.csdn.net",
       "description": "CSDN博客的清理规则，移除所有URL参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     },
     {
       "id": "sogou-com",
@@ -72,8 +63,8 @@
       "domain": "sogou.com",
       "folder": "sogou.com",
       "description": "搜狗搜索的清理规则，保留搜索关键词和分页参数",
-      "updatedAt": "2024-01-01T00:00:00Z",
-      "latestVersion": "v1.0.0"
+      "updatedAt": "2026-03-08T00:00:00Z",
+      "latestVersion": "v2.0.0"
     }
   ]
 }
