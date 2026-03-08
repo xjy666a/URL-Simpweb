@@ -1,0 +1,20 @@
+{
+  "id": "bing-com-v1.0.0",
+  "name": "必应搜索",
+  "domain": "bing.com",
+  "version": "v1.0.0",
+  "publishedAt": "2024-01-01T00:00:00Z",
+  "author": "xjy666a",
+  "rules": [
+    {
+      "id": "default-bing",
+      "name": "必应搜索",
+      "domain": "bing.com",
+      "path": "/search",
+      "keepParams": ["q", "first", "mkt"],
+      "removeParams": [],
+      "action": "redirect",
+      "enabled": true
+    }
+  ]
+}

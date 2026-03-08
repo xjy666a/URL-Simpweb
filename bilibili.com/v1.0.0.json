@@ -1,0 +1,20 @@
+{
+  "id": "bilibili-com-v1.0.0",
+  "name": "B站视频",
+  "domain": "bilibili.com",
+  "version": "v1.0.0",
+  "publishedAt": "2024-01-01T00:00:00Z",
+  "author": "xjy666a",
+  "rules": [
+    {
+      "id": "default-bilibili",
+      "name": "B站视频",
+      "domain": "bilibili.com",
+      "path": "/video/",
+      "keepParams": [],
+      "removeParams": ["*"],
+      "action": "replace",
+      "enabled": true
+    }
+  ]
+}

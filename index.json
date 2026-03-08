@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2024-01-01T00:00:00Z",
+  "totalWebsites": 7,
+  "websites": [
+    {
+      "id": "bing-com",
+      "name": "必应搜索",
+      "domain": "bing.com",
+      "folder": "bing.com",
+      "description": "必应搜索的清理规则，保留搜索关键词和分页参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
+    {
+      "id": "baidu-com",
+      "name": "百度搜索",
+      "domain": "baidu.com",
+      "folder": "baidu.com",
+      "description": "百度搜索的清理规则，保留搜索关键词和分页参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
+    {
+      "id": "bilibili-com",
+      "name": "B站视频",
+      "domain": "bilibili.com",
+      "folder": "bilibili.com",
+      "description": "B站视频的清理规则，移除所有URL参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
+    {
+      "id": "kimi-moonshot-cn",
+      "name": "KIMI AI",
+      "domain": "kimi.moonshot.cn",
+      "folder": "kimi.moonshot.cn",
+      "description": "KIMI AI的清理规则，移除所有URL参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
+    {
+      "id": "so-com",
+      "name": "360搜索",
+      "domain": "so.com",
+      "folder": "so.com",
+      "description": "360搜索的清理规则，保留搜索关键词和分页参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
+    {
+      "id": "blog-csdn-net",
+      "name": "CSDN博客",
+      "domain": "blog.csdn.net",
+      "folder": "blog.csdn.net",
+      "description": "CSDN博客的清理规则，移除所有URL参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    },
+    {
+      "id": "sogou-com",
+      "name": "搜狗搜索",
+      "domain": "sogou.com",
+      "folder": "sogou.com",
+      "description": "搜狗搜索的清理规则，保留搜索关键词和分页参数",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "latestVersion": "v1.0.0"
+    }
+  ]
+}

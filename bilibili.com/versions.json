@@ -1,0 +1,16 @@
+{
+  "id": "bilibili-com",
+  "name": "B站视频",
+  "domain": "bilibili.com",
+  "latestVersion": "v1.0.0",
+  "updatedAt": "2024-01-01T00:00:00Z",
+  "versions": [
+    {
+      "version": "v1.0.0",
+      "filename": "v1.0.0.json",
+      "uploadedAt": "2024-01-01T00:00:00Z",
+      "type": "stable",
+      "changelog": "初始版本，支持B站视频页面清理"
+    }
+  ]
+}

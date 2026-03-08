@@ -1,0 +1,16 @@
+{
+  "id": "bing-com",
+  "name": "必应搜索",
+  "domain": "bing.com",
+  "latestVersion": "v1.0.0",
+  "updatedAt": "2024-01-01T00:00:00Z",
+  "versions": [
+    {
+      "version": "v1.0.0",
+      "filename": "v1.0.0.json",
+      "uploadedAt": "2024-01-01T00:00:00Z",
+      "type": "stable",
+      "changelog": "初始版本，支持必应搜索页面清理"
+    }
+  ]
+}
