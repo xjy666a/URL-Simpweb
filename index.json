@@ -1,5 +1,5 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "updatedAt": "2024-01-01T00:00:00Z",
   "totalWebsites": 8,
   "websites": [
@@ -19,7 +19,7 @@
       "folder": "bing.com",
       "description": "必应搜索的清理规则，保留搜索关键词和分页参数",
       "updatedAt": "2026-04-01T00:00:00Z",
-      "latestVersion": "v1.3.0"
+      "latestVersion": "v1.4.0"
     },
     {
       "id": "baidu-com",
