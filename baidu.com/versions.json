@@ -2,8 +2,8 @@
   "id": "baidu-com",
   "name": "百度搜索",
   "domain": "baidu.com",
-  "latestVersion": "v1.0.0",
-  "updatedAt": "2024-01-01T00:00:00Z",
+  "latestVersion": "v2.0.0",
+  "updatedAt": "2026-03-08T00:00:00Z",
   "versions": [
     {
       "version": "v1.0.0",
@@ -11,6 +11,13 @@
       "uploadedAt": "2024-01-01T00:00:00Z",
       "type": "stable",
       "changelog": "初始版本，支持百度搜索页面清理"
+    },
+    {
+      "version": "v2.0.0",
+      "filename": "v2.0.0.json",
+      "uploadedAt": "2026-03-08T00:00:00Z",
+      "type": "stable",
+      "changelog": "云端正式发布"
     }
   ]
 }
