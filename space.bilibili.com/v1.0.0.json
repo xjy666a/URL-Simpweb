@@ -1,0 +1,20 @@
+{
+  "id": "space-bilibili-com-v1.0.0",
+  "name": "B站空间",
+  "domain": "space.bilibili.com",
+  "version": "v1.0.0",
+  "publishedAt": "2026-03-13T00:00:00Z",
+  "author": "xjy666a",
+  "rules": [
+    {
+      "id": "default-bilibili-space",
+      "name": "B站空间",
+      "domain": "space.bilibili.com",
+      "path": "",
+      "keepParams": [],
+      "removeParams": ["*"],
+      "action": "replace",
+      "enabled": true
+    }
+  ]
+}

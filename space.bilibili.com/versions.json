@@ -1,0 +1,16 @@
+{
+  "id": "space-bilibili-com",
+  "name": "B站空间",
+  "domain": "space.bilibili.com",
+  "latestVersion": "v1.0.0",
+  "updatedAt": "2026-03-13T00:00:00Z",
+  "versions": [
+    {
+      "version": "v1.0.0",
+      "filename": "v1.0.0.json",
+      "uploadedAt": "2026-03-13T00:00:00Z",
+      "type": "stable",
+      "changelog": "初始版本，支持B站空间页面清理"
+    }
+  ]
+}
