@@ -1,17 +1,22 @@
-# 🌐 URL 清理规则云端仓库
-
+# 🌐 网站URL简化 | 去除杂乱参数
+## 云端脚本规则仓库
 > 让你的浏览器链接更清爽、更简洁
+
+[![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-下载安装-brightgreen?style=for-the-badge)](https://greasyfork.org/zh-CN/scripts/524527-%E7%BD%91%E7%AB%99url%E7%AE%80%E5%8C%96-%E5%8E%BB%E9%99%A4%E6%9D%82%E4%B9%B1%E5%8F%82%E6%95%B0/)
+[![脚本猫](https://img.shields.io/badge/%E8%84%9A%E6%9C%AC%E7%8C%AB-下载安装-blue?style=for-the-badge)](https://scriptcat.org/zh-CN/script-show-page/2654)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 ---
 
 ## 📖 这是什么？
 
-这是一个为 **网站URL简化** 脚本提供支持的云端服务。
+这是一个 **用户脚本（Userscript）**，能够自动清理网页URL中的多余参数。
 
 简单来说，它能帮你：
 - ✅ 自动去除网页链接里的多余参数
 - ✅ 让分享的链接更干净、更专业
 - ✅ 无需手动更新，规则自动同步
+- ✅ 支持自定义清理规则
 
 ---
 
@@ -48,24 +53,68 @@ https://www.bilibili.com/video/BV1xx411c7mD/
 
 ## 🚀 如何使用？
 
-### 第一步：安装脚本
+### 第一步：安装脚本管理器
 
-1. 安装浏览器扩展 **Tampermonkey**（篡改猴）
-   - [Chrome 商店](https://chrome.google.com/webstore/detail/tampermonkey)
-   - [Firefox 商店](https://addons.mozilla.org/firefox/addon/tampermonkey)
+首先需要在浏览器中安装脚本管理器扩展：
 
-2. 安装 **网站URL简化** 脚本
-   - 从 [Greasy Fork](https://greasyfork.org) 搜索安装
-   - 或从 [脚本猫](https://scriptcat.org) 安装
+| 浏览器 | 推荐扩展 | 下载地址 |
+|--------|----------|----------|
+| Chrome / Edge | Tampermonkey（篡改猴） | [Chrome 商店](https://chrome.google.com/webstore/detail/tampermonkey) |
+| Firefox | Tampermonkey（篡改猴） | [Firefox 商店](https://addons.mozilla.org/firefox/addon/tampermonkey) |
+| Safari | Tampermonkey | [App Store](https://apps.apple.com/app/tampermonkey) |
 
-### 第二步：启用云端更新
+### 第二步：安装脚本
+
+选择以下任一平台安装脚本：
+
+| 平台 | 特点 | 链接 |
+|------|------|------|
+| 🍴 **Greasy Fork** | 国际知名脚本平台，自动更新 | [点击安装](https://greasyfork.org/zh-CN/scripts/524527-%E7%BD%91%E7%AB%99url%E7%AE%80%E5%8C%96-%E5%8E%BB%E9%99%A4%E6%9D%82%E4%B9%B1%E5%8F%82%E6%95%B0/) |
+| 🐱 **脚本猫** | 国内脚本平台，访问更快 | [点击安装](https://scriptcat.org/zh-CN/script-show-page/2654) |
+
+> 💡 **提示**：两个平台版本相同，选择任一即可。建议国内用户选择脚本猫，访问更快。
+
+### 第三步：启用云端同步（可选）
 
 1. 在网页上点击 Tampermonkey 图标
 2. 找到 **网站URL简化** 脚本
-3. 点击 **"⚙️ 规则和功能问题反馈和建议"**
-4. 选择 **"☁️ 云端同步"** → **"云端同步设置"**
-5. 打开 **"启用云端同步"** 开关
-6. 点击 **"🔄 立即同步"** 按钮获取最新规则
+3. 点击 **"☁️ 云端同步"**
+4. 开启 **"启用云端同步"**
+5. 点击 **"立即同步云端规则"**
+
+> 🔒 **隐私说明**：云端同步**仅用于获取最新的清理规则**，不会上传任何个人信息、浏览记录或其他数据。脚本库完全开源，代码透明可审计。
+
+---
+
+## 🔒 隐私与安全
+
+### 我们承诺
+
+| ✅ 我们做的 | ❌ 我们不做的 |
+|------------|--------------|
+| 仅从云端获取清理规则 | 不收集任何个人信息 |
+| 本地存储您的设置 | 不上传浏览记录 |
+| 开源代码，透明可审计 | 不植入任何广告 |
+| 规则自动更新 | 不修改网页内容 |
+
+### 数据存储说明
+
+所有数据均存储在您的浏览器本地（通过 Tampermonkey 的 GM_setValue API），包括：
+- 脚本设置（如清理模式、功能开关）
+- 自定义规则
+- 清理记录（可选，最多保留100条）
+- 使用次数统计
+
+**这些数据永远不会离开您的设备。**
+
+### 云端同步说明
+
+当您启用云端同步时，脚本会：
+1. 从 GitHub/Gitee 仓库下载最新的清理规则
+2. 规则文件为纯 JSON 格式，不包含任何可执行代码
+3. 整个过程**只下载，不上传**
+
+您可以随时在脚本设置中关闭云端同步功能。
 
 ---
 
@@ -105,35 +154,53 @@ https://www.bilibili.com/video/BV1xx411c7mD/
 
 ## ❓ 常见问题
 
-### Q: 这个功能安全吗？
+### Q: 这个脚本安全吗？
 
-**A:** 完全安全。我们只做一件事：去除链接中多余的参数。不会收集你的个人信息，不会修改网页内容，不会影响正常浏览。
+**A:** 完全安全。
+- 我们只做一件事：去除链接中多余的参数
+- 不会收集你的个人信息
+- 不会修改网页内容
+- 不会影响正常浏览
+- 代码完全开源，可自行审查
+
+### Q: 云端同步会上传我的数据吗？
+
+**A:** 不会。云端同步**仅下载规则，不上传任何数据**。所有设置和记录都保存在您的浏览器本地。
 
 ### Q: 为什么有些链接清理不了？
 
 **A:** 可能有以下原因：
 - 该网站尚未支持（可以向我们反馈）
 - 链接格式特殊
-- 网络连接问题
+- 规则尚未同步
 
 如果遇到无法清理的链接，欢迎向我们反馈。
 
-### Q: 更新失败怎么办？
-
-**A:** 请尝试以下方法：
-1. 检查网络连接是否正常
-2. 切换到其他更新方式（如从测试版切换到稳定版）
-3. 重启浏览器后再次尝试
-
-如果问题仍然存在，请通过下方反馈渠道联系我们。
-
-### Q: 如何关闭云端更新？
+### Q: 如何添加自定义规则？
 
 **A:** 
 1. 点击 Tampermonkey 图标
 2. 选择 **网站URL简化** 脚本
-3. 点击 **"⚙️ 清理规则设置"**
-4. 关闭 **"启用云端规则更新"** 开关
+3. 点击 **"⚙️ 清理规则和其它功能设置"**
+4. 点击 **"清理规则管理"**
+5. 在下方输入框添加自定义规则
+
+### Q: 如何关闭某个网站的清理？
+
+**A:** 
+1. 点击 Tampermonkey 图标
+2. 选择 **网站URL简化** 脚本
+3. 点击 **"⚙️ 清理规则和其它功能设置"**
+4. 找到对应网站的规则，点击 **"禁用"** 按钮
+
+### Q: 支持哪些浏览器？
+
+**A:** 支持所有主流浏览器：
+- Chrome / Edge / Brave / Opera（Chromium 内核）
+- Firefox
+- Safari
+
+推荐使用 **Tampermonkey** 作为脚本管理器以获得最佳体验。
 
 ---
 
@@ -143,17 +210,19 @@ https://www.bilibili.com/video/BV1xx411c7mD/
 
 如果你在使用过程中遇到任何问题，或者有新功能建议，欢迎通过以下方式反馈：
 
-**方式一：GitHub Issues（推荐）**
-- 访问我们的 [反馈页面](../../issues)
-- 点击 **"New Issue"** 按钮
-- 选择合适的模板提交反馈
+| 渠道 | 说明 | 链接 |
+|------|------|------|
+| 🐙 **GitHub Issues** | 推荐方式，响应最快 | [提交 Issue](../../issues) |
+| 🍴 **Greasy Fork** | 在脚本页面反馈 | [反馈页面](https://greasyfork.org/zh-CN/scripts/524527-%E7%BD%91%E7%AB%99url%E7%AE%80%E5%8C%96-%E5%8E%BB%E9%99%A4%E6%9D%82%E4%B9%B1%E5%8F%82%E6%95%B0/feedback) |
+| 🐱 **脚本猫** | 国内用户推荐 | [脚本页面](https://scriptcat.org/zh-CN/script-show-page/2654) |
+| 📧 **邮箱** | 私密问题反馈 | xiaojiyangz@163.com |
 
-**方式二：脚本内反馈**
-- 点击 Tampermonkey 图标
-- 选择 **网站URL简化** 脚本
-- 点击 **"⚙️ 规则和功能问题反馈和建议"**
-- 选择反馈方式（GitHub Issues / Gitee Issues / 邮箱）
-- 会自动跳转到反馈页面
+### 脚本内快速反馈
+
+1. 点击 Tampermonkey 图标
+2. 选择 **网站URL简化** 脚本
+3. 点击 **"💬 提供反馈或建议"**
+4. 选择反馈渠道
 
 ### 想贡献新规则？
 
@@ -170,10 +239,31 @@ https://www.bilibili.com/video/BV1xx411c7mD/
 
 ## 📊 项目统计
 
-- ⭐ **支持网站**：8 个主流平台
-- 🔄 **更新频率**：每小时自动检查更新
-- 👥 **社区贡献者**：欢迎你的加入！
-- 📅 **项目启动**：2026 年 3 月
+| 指标 | 数据 |
+|------|------|
+| 🌐 **支持网站** | 8+ 个主流平台 |
+| � **脚本版本** | 4.3 |
+| � **云端规则** | 持续更新 |
+| 📅 **项目启动** | 2025 年 |
+
+---
+
+## 🎯 功能特性
+
+### 核心功能
+
+- 🔗 **URL参数清理** - 自动去除追踪参数，让链接更简洁
+- ☁️ **云端规则同步** - 自动获取最新清理规则，无需手动更新
+- ⚙️ **自定义规则** - 支持添加自己的清理规则
+- 📝 **清理记录** - 记录每次清理操作，方便追溯
+- 🔔 **清理提示** - 可选择静默模式或提示模式
+
+### 特色功能
+
+- 🎮 **Minecraft Wiki 重定向** - 自动跳转到官方Wiki
+- 🌐 **多节点同步** - Gitee/GitHub/jsdelivr 三节点保障
+- 🔍 **环境检测** - 自动检测运行环境兼容性
+- 📊 **使用统计** - 记录使用次数和天数
 
 ---
 
@@ -190,7 +280,7 @@ https://www.bilibili.com/video/BV1xx411c7mD/
 
 ## 📄 开源协议
 
-本项目采用 MIT 协议开源，你可以自由使用、修改和分享。
+本项目采用 [MIT](LICENSE) 协议开源，你可以自由使用、修改和分享。
 
 ---
 
@@ -199,7 +289,11 @@ https://www.bilibili.com/video/BV1xx411c7mD/
 </p>
 
 <p align="center">
-  <a href="https://github.com/your-username/url-cleaner-rules/stargazers">⭐ 点赞支持</a> •
-  <a href="https://github.com/your-username/url-cleaner">📦 查看脚本</a> •
-  <a href="../../issues">💬 提交反馈</a>
+  <a href="https://greasyfork.org/zh-CN/scripts/524527-%E7%BD%91%E7%AB%99url%E7%AE%80%E5%8C%96-%E5%8E%BB%E9%99%A4%E6%9D%82%E4%B9%B1%E5%8F%82%E6%95%B0/">🍴 Greasy Fork</a> •
+  <a href="https://scriptcat.org/zh-CN/script-show-page/2654">� 脚本猫</a> •
+  <a href="../../issues">💬 反馈问题</a>
+</p>
+
+<p align="center">
+  <sub>Made with ❤️ by xjy666a</sub>
 </p>
