@@ -1,0 +1,20 @@
+{
+  "id": "baidu-com-v2.1.0",
+  "name": "百度搜索",
+  "domain": "www.baidu.com",
+  "version": "v2.1.0",
+  "publishedAt": "2026-04-18T00:00:00Z",
+  "author": "xjy666a",
+  "rules": [
+    {
+      "id": "default-baidu",
+      "name": "百度搜索",
+      "domain": "www.baidu.com",
+      "path": "/s",
+      "keepParams": ["wd", "word", "pn", "si", "gpc"],
+      "removeParams": ["tfflag"],
+      "action": "redirect",
+      "enabled": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "version": "2.0.4",
-  "updatedAt": "2026-03-13T00:00:00Z",
+  "version": "2.0.5",
+  "updatedAt": "2026-04-18T00:00:00Z",
   "totalWebsites": 8,
   "websites": [
     {
@@ -24,11 +24,11 @@
     {
       "id": "baidu-com",
       "name": "百度搜索",
-      "domain": "baidu.com",
+      "domain": "www.baidu.com",
       "folder": "baidu.com",
       "description": "百度搜索的清理规则，保留搜索关键词和分页参数",
-      "updatedAt": "2026-03-08T00:00:00Z",
-      "latestVersion": "v2.0.0"
+      "updatedAt": "2026-04-18T00:00:00Z",
+      "latestVersion": "v2.1.0"
     },
     {
       "id": "bilibili-com",
