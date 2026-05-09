@@ -11,6 +11,7 @@
       "name": "B站视频",
       "domain": "bilibili.com",
       "path": "/video/",
+      "matchMode": "loose",
       "keepParams": ["t"],
       "removeParams": [],
       "action": "replace",
