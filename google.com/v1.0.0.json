@@ -11,6 +11,7 @@
       "name": "Google搜索",
       "domain": "google.com",
       "path": "/search",
+      "matchMode": "strict",
       "keepParams": ["q", "start"],
       "removeParams": ["*"],
       "action": "redirect",

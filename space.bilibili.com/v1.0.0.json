@@ -11,6 +11,7 @@
       "name": "B站空间",
       "domain": "space.bilibili.com",
       "path": "",
+      "matchMode": "strict",
       "keepParams": [],
       "removeParams": ["*"],
       "action": "replace",

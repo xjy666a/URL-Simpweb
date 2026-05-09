@@ -11,6 +11,7 @@
       "name": "CSDN博客",
       "domain": "blog.csdn.net",
       "path": "/article/details/",
+      "matchMode": "strict",
       "keepParams": [],
       "removeParams": ["*"],
       "action": "replace",

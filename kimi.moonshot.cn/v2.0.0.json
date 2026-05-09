@@ -11,6 +11,7 @@
       "name": "KIMI AI",
       "domain": "kimi.moonshot.cn",
       "path": "",
+      "matchMode": "strict",
       "keepParams": [],
       "removeParams": ["*"],
       "action": "redirect",
