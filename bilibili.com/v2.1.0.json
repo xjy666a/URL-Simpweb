@@ -12,7 +12,7 @@
       "domain": "bilibili.com",
       "path": "/video/",
       "matchMode": "loose",
-      "keepParams": ["t"],
+      "keepParams": ["t","p"],
       "removeParams": [],
       "action": "replace",
       "enabled": true
